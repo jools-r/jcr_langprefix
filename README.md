@@ -26,11 +26,11 @@ jcr_langprefix works invisibly in the background, storing the language
 prefix for later use in your page code while passing the remainder of
 the URL to textpattern for handling as normal.
 
-[If no language prefix is provided]{.underline}, the default language
+<ins>If no language prefix is provided</ins>, the default language
 (see settings) is set in the background (but *not* added to the url) and
 the url works as normal.
 
-[If an unknown language prefix is provided]{.underline}, i.e. one not in
+<ins>If an unknown language prefix is provided</ins>, i.e. one not in
 the list of permitted languages (see settings), Textpattern will treat
 it as a regular section name and return a "404 Not Found" if it does not
 exist.
@@ -44,9 +44,9 @@ language-specific links.
 
 ### Please note
 
-[The plugin only handles the language prefix in the url. It has no
+<ins>The plugin only handles the language prefix in the url. It has no
 concept of whether the actual page is in a particular
-language.]{.underline} That means `/en/vegetables/` and `/de/vegetables`
+language.</ins> That means `/en/vegetables/` and `/de/vegetables`
 and `/vegetables/` are all identical, i.e. the "vegetables" section in
 Textpattern. It is up to you to define what information should be shown
 for a page's current language prefix.
