@@ -1,0 +1,9 @@
+{
+    "version": "0.2",
+    "author": "jcr \/ txpbuilders",
+    "author_uri": "http:\/\/txp.builders\/",
+    "description": "Custom language prefix url scheme and permlink handler",
+    "type": 1,
+    "order": 4,
+    "flags": 3
+}

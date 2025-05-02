@@ -1,0 +1,19 @@
+#@owner jcr_langprefix
+#@language en, en-gb, en-us
+#@prefs
+jcr_langprefix => Language URL prefixes
+jcr_langprefix_set => Permitted URL language prefixes
+instructions_jcr_langprefix_set => comma-separated list of language codes
+jcr_langprefix_default => Default URL language prefix
+jcr_langprefix_auto_permlinks => Auto-prefix permlinks?
+#@public
+jcr_lang_empty => No "lang" attribute specified for jcr_if_lang
+#@language de
+#@prefs
+jcr_langprefix => URL-Sprachpräfixe
+jcr_langprefix_set => Erlaubte URL-Sprachpräfixe
+instructions_jcr_langprefix_set => Mit Komma getrennte Liste von Sprachcodes
+jcr_langprefix_default => Standard URL-Sprachpräfix
+jcr_langprefix_auto_permlinks => Automatische Präfixierung von Permlinks?
+#@public
+jcr_lang_empty => „lang“-Attribut fehlt für jcr_if_lang
