@@ -210,6 +210,10 @@ bc. <a href="<txp:jcr_langswitch lang='<txp:yield item />' />" hreflang="<txp:yi
 
 h2. Changelog
 
+h3. v 0.2.1 (jcr)
+
+* Added @permitted@ and @set@ attributes to @jcr_lang@.
+
 h3. v 0.2 (jcr)
 
 * Renamed plugin and main tag:
