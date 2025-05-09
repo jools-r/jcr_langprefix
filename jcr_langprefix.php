@@ -317,14 +317,29 @@ function jcr_langprefix_pagelinkurl($parts, $inherit = [])
 }
 
 /**
- * Public-side tag to retrieve current page's language prefix.
+ * Public-side tag to retrieve or set current page's language prefix.
+ * Can also return a comma-separated list of all permitted languages.
  */
 
 function jcr_lang()
 {
     global $pretext;
 
-    return $pretext['lang_prefix'];
+    extract($atts = lAtts(array(
+        'set'        => '',
+        'permitted'  => '0',
+    ), $atts));
+
+    if (!empty($set)) {
+        $pretext['lang_prefix'] = $set;
+        return;
+    }
+
+    if ($permitted) {
+        $out = get_pref('jcr_langprefix_set');
+    }
+
+    return isset($out) ? $out : $pretext['lang_prefix'];
 }
 
 /**

@@ -57,9 +57,22 @@ To use the language-aware @jcr_text@ tag to output language strings stored in Te
 
 h2. Tag: jcr_lang
 
-Outputs the language prefix from the current page url.
+Outputs the language prefix from the current page url, or sets/overrides the current page language.
 
 bc. <html lang="<txp:jcr_lang />">
+
+h4. Attributes
+
+*permitted*
+Outputs a comma-separated string of the permitted languages from the settings
+Example: @<txp:jcr_lang permitted />@ will return (for example) @en, de, fr@.
+
+Use this to iterate over the languages using the global @breakby@ and @breakform@ attributes. See the examples.
+
+*set*
+Manually set the page's language.
+Example: @<txp:jcr_lang set="de" />@ will return (for example) @en, de, fr@.
+Use, for example, when not prefixing your urls with a language code.
 
 
 h2. Tag: jcr_if_lang
@@ -163,7 +176,7 @@ bc. <txp:jcr_if_lang lang="default">
     </txp:evaluate>
 </txp:jcr_if_lang>
 
-h3. Language switcher principle
+h3. Language switcher principle (manual)
 
 An example of a simple language switcher that switches between different language versions of the current page:
 
@@ -180,6 +193,19 @@ bc. <nav>
         </li>
     </ul>
 </nav>
+
+
+h3. Language switcher (built from the list of permitted languages)
+
+A more complex but dynamically updating version that loops over the list of permitted languages using Textpattern's global @breakby@ and @breakform@ attributes. The list of languages is set as a comma-separated list of languages in the plugin settings, e.g. @en, de, fr@:
+
+bc. <txp:variable name="nav_lang" value='<txp:jcr_lang permitted />' breakby breakform="site_nav_langitem" wraptag="ul" break="li" output />
+
+with an additional @breakform@ (e.g. here named @site_nav_langitem@ of type @misc@). You can refer to the current item in the loop using @<txp:yield item />@:
+
+bc. <a href="<txp:jcr_langswitch lang='<txp:yield item />' />" hreflang="<txp:yield item />" <txp:jcr_if_lang lang='<txp:yield item />'> aria-current="page"</txp:jcr_if_lang>>
+    <txp:yield item escape="upper" />
+</a>
 
 
 h2. Changelog
